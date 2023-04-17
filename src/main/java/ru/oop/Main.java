@@ -22,7 +22,7 @@ package ru.oop;
  * {@code Arrays.asList(new Car(person), new Bus("43", person),
  *        new Bus("50", person));}
  * <ul>
- *   <li>Код не должен превышать 7 строк</li>
+ *   <li>Код не должен превышать 12 строк</li>
  *   <li>Запрещено реализовывать конструкторы и методы, кроме moveTo(Person person, Position destination)</li>
  *   <li>Запрещено добавлять новые методы в класс Main</li>
  *   <li>Разрешено создавать новые классы и интерфейсы</li>
