@@ -14,11 +14,6 @@ public interface Person {
     Position getPosition();
 
     /**
-     * Установить текущее местоположение
-     */
-    void setPosition(Position position);
-
-    /**
      * Пройти до указанного места из текущего местопложения
      *
      * @param destination место назначения
