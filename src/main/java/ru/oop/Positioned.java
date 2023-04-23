@@ -13,9 +13,4 @@ public interface Positioned {
      * Текущее местоположение
      */
     Position getPosition();
-
-    /**
-     * Установить текущее местоположение
-     */
-    void setPosition(Position position);
 }
