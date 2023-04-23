@@ -9,7 +9,7 @@ package ru.oop;
 public interface Person extends Positioned {
 
     /**
-     * Пройти до указанного места из текущего местопложения
+     * Пройти до указанного места из текущего местоположения
      *
      * @param destination место назначения
      */
