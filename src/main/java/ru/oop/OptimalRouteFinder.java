@@ -9,5 +9,6 @@ public class OptimalRouteFinder {
      */
     public Route findPersonalRoute(Person person, Position start, Position destination) {
         // TODO
+        return null;
     }
 }

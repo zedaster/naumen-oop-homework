@@ -1,5 +1,12 @@
 package ru.oop;
 
+import ru.oop.transport.Bus;
+import ru.oop.transport.Car;
+import ru.oop.transport.Transport;
+
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * <b>Задача 2:</b><br>
  * Добраться человеку до заданного места.<br>
@@ -38,8 +45,11 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        Route route = new OptimalRouteFinder().findPersonalRoute(person, person.getPosition(), destination);
-        for (Transport transport : route.getTransportList()) {
+        List<Transport> transportList = Arrays.asList(new Car(person), new Bus("43", person),
+                new Bus("50", person));
+//        Route route = new OptimalRouteFinder().findPersonalRoute(person, person.getPosition(), destination);
+//        Route route = new Route(person.getPosition(), destination, transportList);
+        for (Transport transport : transportList) {
             person.walk(transport.getPosition());
             // Транспорт хоть и персонализирован, но пользователя необходимо все же посадить в него и высадить помимо
             // самой поездки

@@ -1,4 +1,8 @@
-package ru.oop;
+package ru.oop.transport;
+
+import ru.oop.Person;
+import ru.oop.Position;
+import ru.oop.Positioned;
 
 // TODO Реализовать данный интерфейс
 public interface Transport extends Positioned {
