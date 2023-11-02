@@ -38,12 +38,15 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        Route route = new OptimalRouteFinder().findRoute(person.getPosition(), destination);
-        Transport transport = route.getTransport();
-        person.walk(transport.getPosition());
-        transport.addPassenger(person);
-        transport.goCloseTo(destination);
-        transport.removePassenger(person);
+        Route route = new OptimalRouteFinder().findPersonalRoute(person, person.getPosition(), destination);
+        for (Transport transport : route.getTransportList()) {
+            person.walk(transport.getPosition());
+            // Транспорт хоть и персонализирован, но пользователя необходимо все же посадить в него и высадить помимо
+            // самой поездки
+            transport.addPassenger(person);
+            transport.goCloseTo(destination);
+            transport.removePassenger(person);
+        }
         person.walk(destination);
         assert person.getPosition() == destination;
     }

@@ -1,19 +1,22 @@
 package ru.oop;
 
+import java.util.List;
+
 /**
- * Путь из одной точки в другую с использованием транспорта посередине
- * (Начальная и/или конечная точка могут не совпадать с локацией транспорта)
+ * Путь из одной точки в другую с использованием цепочки из транспорта посередине.
+ * Начальная и/или конечная точка пути могут не совпадать с локациями отправления/приезда транспорта.
+ * От одного траспорта до другого в цепочке возможно придется дойти пешком
  */
 public class Route {
     private final Position startPosition;
     private final Position endPosition;
 
-    private final Transport transport;
+    private final List<Transport> transportList;
 
-    public Route(Position startPosition, Position endPosition, Transport transport) {
+    public Route(Position startPosition, Position endPosition, List<Transport> transportList) {
         this.startPosition = startPosition;
         this.endPosition = endPosition;
-        this.transport = transport;
+        this.transportList = transportList;
     }
 
     /**
@@ -33,9 +36,11 @@ public class Route {
     }
 
     /**
-     * Возвращает транспорт, на котором необходимо будет добраться для совершения данного маршрута
+     * Возвращает цепочку транспорта, на которых необходимо по порядку будет добраться для совершения данного маршрута
+     * Начальная и/или конечная точка пути могут не совпадать с локациями отправления/приезда транспорта.
+     * Возможно понадобиться дойти пешком от одного траспорта к другому
      */
-    public Transport getTransport() {
-        return transport;
+    public List<Transport> getTransportList() {
+        return transportList;
     }
 }
