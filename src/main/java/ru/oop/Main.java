@@ -38,7 +38,13 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        // TODO
+        Route route = new OptimalRouteFinder().findRoute(person.getPosition(), destination);
+        Transport transport = route.getTransport();
+        person.walk(transport.getPosition());
+        transport.addPassenger(person);
+        transport.goCloseTo(destination);
+        transport.removePassenger(person);
+        person.walk(destination);
         assert person.getPosition() == destination;
     }
 }
