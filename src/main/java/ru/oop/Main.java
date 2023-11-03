@@ -47,8 +47,6 @@ public class Main {
     public static void moveTo(Person person, Position destination) {
         List<Transport> transportList = Arrays.asList(new Car(person), new Bus("43", person),
                 new Bus("50", person));
-//        Route route = new OptimalRouteFinder().findPersonalRoute(person, person.getPosition(), destination);
-//        Route route = new Route(person.getPosition(), destination, transportList);
         for (Transport transport : transportList) {
             person.walk(transport.getPosition());
             // Транспорт хоть и персонализирован, но пользователя необходимо все же посадить в него и высадить помимо
